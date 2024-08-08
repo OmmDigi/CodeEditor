@@ -5,7 +5,9 @@ const { pLanguageInfo } = require("../constant");
 const writeFile = (userCode, pLanguageKey) => {
   return new Promise((resolve, rejects) => {
     const pLExtension = pLanguageInfo[pLanguageKey].fileExtension;
-    const fileName = `user${Math.floor(Math.random() * 1000000)}Code${pLExtension}`;
+    const fileName = `user${Math.floor(
+      Math.random() * 1000000
+    )}Code${pLExtension}`;
 
     const filePath = `./userscode/${fileName}`;
 
@@ -43,7 +45,7 @@ const compileCode = async (userCode, pLanguageKey, res) => {
         rejects("Some Error Happend");
       }
 
-      fs.unlinkSync(filePath);
+      fs.unlink(filePath, (err) => {});
     });
 
     childProcess.on("error", (err) => {
