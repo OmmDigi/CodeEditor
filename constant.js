@@ -11,6 +11,10 @@ const pLanguageInfo = {
     command: "python",
     fileExtension: ".py",
   },
+  php: {
+    command: "php",
+    fileExtension: ".php",
+  },
 };
 
 module.exports = {
